@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field of Dreams</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
+    <script type="module" src="js/animation.js"></script>
+    <script type="module" src="js/menutoggle.js"></script>
+
+    <!-- BEGIN FAVICON -->
+    <link rel="icon" href="/images/logo-favicon-50x50.png"/>
+    <meta name="theme-color" content="#252831"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/logo-192x192.png"/>
+    <link rel="apple-touch-icon" sizes="256x256" href="/images/logo-256x256.png"/>
+    <link rel="apple-touch-icon" sizes="384x384" href="/images/logo-384x384.png"/>
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/logo-512x512.png"/>
+    <!-- END FAVICON -->
+
+    <!-- BEGIN INSTALLABLE APP-->
+    <link rel="manifest" href="/manifest.webmanifest"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="Field Of Dreams"/>
+    <!-- END INSTALLABLE APP-->
+</head>
+
+<body>
+    <header>
+        <div class="controls">
+            <div class="playback">
+                <img src="images/play.PNG" alt="Play" id="playButton" class="imgbutton">
+                <img src="images/rewind.PNG" alt="Rewind" id="rewindButton" class="imgbutton">
+            </div>
+            <div class="title">
+                <h1 id="playTitle">Click to Name Play</h1>
+            </div>
+            <div class="leave">
+                <img src="images/leave.png" alt="Leave" id="leaveButton" class="imgbutton">
+            </div>
+        </div>
+        <div class="frames">
+            <div class="larrow">&lArr;</div>
+            <div class="framenumber">
+                <h3>Frame 1</h3>
+            </div>
+            <div class="rarrow">&rArr;</div>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <span>−</span>
+        </div>
+    </header>
+    <div id="title-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Edit Play Title</h2>
+            
+            <div class="title-edit-container">
+                <label for="play-title-input">Title:</label>
+                <input type="text" id="play-title-input" placeholder="Enter play title">
+                <div id="title-error" class="error-message">Title cannot be empty</div>
+            </div>
+            
+            <div class="modal-buttons">
+                <button id="cancel-title-button">Cancel</button>
+                <button id="save-title-button">Save</button>
+            </div>
+        </div>
+    </div>
+    <div id="field-container" class="field-container"></div>
+    <div id="color-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Team Colors</h2>
+            
+            <div class="color-selection-container">
+            <div class="team-color-row">
+                <label for="home-color-select">Home Team:</label>
+                <select id="home-color-select">
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                </select>
+            </div>
+            
+            <div class="team-color-row">
+                <label for="away-color-select">Away Team:</label>
+                <select id="away-color-select">
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                </select>
+            </div>
+            
+            <div id="color-error" class="error-message">Home and away teams must have different colors</div>
+            </div>
+            
+            <div class="modal-buttons">
+            <button id="cancel-colors-button">Cancel</button>
+            <button id="save-colors-button">Save</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-menu-toggle" id="fMenuToggle">
+            <span>−</span>
+        </div>
+        <div class="menu">
+            <div class="add-color">
+                <img src="images/addplayerbutton.png" alt="Add Player" id="add-players" class="footerimgbutton">
+            </div>
+            <div class="change-color">
+                <img src="images/teamcolorsbutton.png" alt="Team Colors" id="color-select" class="footerimgbutton">
+            </div>
+            <div class="add-frame">
+                <img src="images/addframebutton.png" alt="Add Frame" id="add-frame" class="footerimgbutton">
+            </div>
+            <div class="remove-frame">
+                <img src="images/removeframebutton.png" alt="Remove Frame" id="remove-frame" class="footerimgbutton">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

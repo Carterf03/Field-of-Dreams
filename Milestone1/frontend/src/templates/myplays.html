@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Plays</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/plays.css">
+    <script src="js/playsSubtitle.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="images/logo.png" alt="FOD">
+        <nav>
+            <a href="#" id="currentPage">My Plays</a>
+            <a href="#">Create A Play</a>
+            <a class="pfp" href="/coachsettings"><img class="pfp" src="images/fakepfp.png" alt="User"></a>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome Jane Doe</h1>
+        <h2 id="subtitle">Tap any play to view</h2>
+        <section>
+            <!--Template places in here!-->
+            <div class="play">
+                <img class="playpreview" src="images/fakepreview.png" alt="Preview">
+                <p class="playname">Play 01</p>
+                <p class="coachname">Coach Jane Doe</p>
+            </div>
+            <div class="play">
+                <img class="playpreview" src="images/fakepreview.png" alt="Preview">
+                <p class="playname">Cool Play</p>
+                <p class="coachname">Coach Cool Guy</p>
+            </div>
+            <div class="play">
+                <img class="playpreview" src="images/fakepreview.png" alt="Preview">
+                <p class="playname">a</p>
+                <p class="coachname">Coach A</p>
+            </div>
+            <div class="play">
+                <img class="playpreview" src="images/fakepreview.png" alt="Preview">
+                <p class="playname">Exceedingly Long Named Play.........!</p>
+                <p class="coachname">Coach Longname Coachman</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Created by Team R &copy; 2025</p>
+    </footer>
+    <template id="playTemplate">
+        <p class="playname"></p>
+        <p class="coachname"></p>
+    </template>
+</body>
+
+</html>

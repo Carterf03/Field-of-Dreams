@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Settings</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/settings.css">
+    <script src="./js/auth.js" type="module"></script>
+    <script src="./js/playerSettings.js" type="module" defer></script>
+    <script src="./js/common.js" type="module"></script>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header>
+        <img class="logo" src="/images/logo.png" alt="FOD">
+        <nav>
+            <a href="./myplays">My Plays</a>
+            <a href="./addcoach">Add a Coach</a>
+            <a id="currentPage" class="pfp" href="./playersettings"><img class="pfp" src="" alt="User"></a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <!-- Profile Pic -->
+            <div id="imageContainer">
+                <img id="previewImage" src="" alt="Preview">
+                <label for="imageInput" id="imageInputLabel">Change Profile Picture</label>
+                <input type="file" id="imageInput" name="imageInput" accept="image/*">
+            </div>
+    
+            <div id="userprofile">
+                <!-- Full Name -->
+                <h1 id="name"></h1>
+                <!-- User Role -->
+                <h3 id="userrole"></h3>
+                <!-- User Email -->
+                <h3 id="email"></h3>
+            </div>
+        </section>
+    
+        <!-- Buttons to either Change Password or Delete Account -->
+        <div id="buttons">
+            <button id="changepassword">Change Password</button>
+            <button id="logout">Logout</button>
+            <button id="delete">Delete Account</button>
+        </div>
+    </main>
+</body>
+</html>

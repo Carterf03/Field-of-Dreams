@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Of Dreams</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/signUp.css">
+    <script src="./js/playerSignUp.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <h1>Player Sign Up</h1>
+        <div id="login">
+            <h6>Already Have An Account?</h6>
+            <a href="./">Log in!</a>
+        </div>
+    </header>
+    <main>
+        <form action="/playerRegister" method="post" enctype="multipart/form-data" id="signupForm">
+            <div class="infoset">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required minlength="3" placeholder="John Smith">
+            </div>
+            <div class="infoset">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required placeholder="jsmith@ncsu.edu">
+            </div>
+            <div class="infoset">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8">
+            </div>
+            <div class="infoset">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <input type="submit" value="Sign Up">
+        </form>
+    </main>
+</body>
+</html>

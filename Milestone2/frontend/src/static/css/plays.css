@@ -1,0 +1,47 @@
+main {
+    margin-top: 50px;
+    width: 100%;
+}
+
+a#currentPage {
+    background-color: rgb(182, 182, 182);
+}
+
+h1 {
+    text-align: center;
+    font-weight: lighter;   
+}
+
+h2 {
+    font-weight: lighter;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    gap: 20px;
+}
+.play {
+    margin-bottom: 50px;
+    width: 13.5rem;
+    text-align: center;
+}
+
+.playpreview {
+    width: 10rem;
+}
+
+.playname {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.coachname {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #3B3939;
+}

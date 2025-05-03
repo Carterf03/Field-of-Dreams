@@ -1,0 +1,15 @@
+header {
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+main {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,142 @@
+/**Color Variables**/
+:root {
+  /**Background color**/
+  --background: #DBDBDB;
+
+  /**Selected link in the header**/
+  --active-link: #ABA3A3;
+
+  /**Primary button colors**/
+  --dark-button: #2C2C2C;
+  --dark-button-hover: #1D1D1D;
+  --dark-button-text: #F5F5F5;
+
+  /**Danger button colors**/
+  --danger: #EC221F;
+  --danger-hover: #CC1D1A;
+
+}
+
+/* Mobile/General Styling */
+body {
+  /*Template styling - provided by Professor Dominguez*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*Background styling*/
+  background-color: var(--background);
+
+  /*Font styling*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
+
+button, input[type="submit"], input[type="button"] {
+  background-color: var(--dark-button);
+  border-radius: 8px;
+  color: var(--dark-button-text);
+  padding: 10px;
+}
+
+button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+  background-color: var(--dark-button-hover);
+  cursor: pointer;
+}
+
+button.danger {
+  background-color: var(--danger);
+  border-color: var(--danger-hover);
+}
+
+button.danger:hover {
+  background-color: var(--danger-hover);
+}
+
+/**Header/Navbar Styling **/
+header {
+  /*Sets the position of the header to top of the screen, extends it all the way across*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0px;
+  
+  /*Background color of the header*/
+  background-color: white;
+
+  /*Making navbar contents horizontal*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*The Field of Dreams logo, hidden by default on mobile*/
+.logo {
+  display: none;
+}
+
+nav {
+  /*Aligns navbar items to the center*/
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+nav a {
+  /**Styles each individual link to be centered, with a border, and padding**/
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+}
+
+nav a:active{
+  /**Highlights active link MAY NOT WORK, NEED TO TEST**/
+  background-color: var(--active-link);
+}
+
+a.pfp{
+  padding: 1px;
+}
+
+img.pfp {
+  /*Profile picture styling*/
+  border-radius: 50%;
+  height: 54px;
+  width: 54px;
+}
+
+/**Hide footer on mobile**/
+footer{
+  display: none;
+}
+
+/* Laptop Styling */
+@media (min-width: 768px) {
+  
+  /*Display the Field of Dreams logo*/
+  .logo {
+    display: block;
+    height: 59px;
+    border: 1px solid black;
+  }
+
+  /**Display basic footer on laptop**/
+  footer {
+    display: block;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    margin: 0px;
+    border-radius: 5px 5px 0 0;
+    padding: 5px;
+  }
+}

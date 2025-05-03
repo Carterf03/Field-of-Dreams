@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field of Dreams</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
+    <script type="module" src="js/animation.js"></script>
+    <script type="module" src="js/menutoggle.js"></script>
+
+    <!-- BEGIN FAVICON -->
+    <link rel="icon" href="/images/logo-favicon-50x50.png"/>
+    <meta name="theme-color" content="#252831"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/logo-192x192.png"/>
+    <link rel="apple-touch-icon" sizes="256x256" href="/images/logo-256x256.png"/>
+    <link rel="apple-touch-icon" sizes="384x384" href="/images/logo-384x384.png"/>
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/logo-512x512.png"/>
+    <!-- END FAVICON -->
+
+    <!-- BEGIN INSTALLABLE APP-->
+    <link rel="manifest" href="/manifest.webmanifest"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="Field Of Dreams"/>
+    <!-- END INSTALLABLE APP-->
+</head>
+
+<body>
+    <header>
+        <div class="controls">
+            <div class="playback">
+                <img src="images/play.PNG" alt="Play" id="playButton" class="imgbutton">
+                <img src="images/rewind.PNG" alt="Rewind" id="rewindButton" class="imgbutton">
+            </div>
+            <div class="title">
+                <h1 id="playTitle">Testing Title</h1>
+            </div>
+            <div class="leave">
+                <a href="/myplays"><img src="images/leave.png" alt="Leave" class="imgbutton"></a>
+            </div>
+        </div>
+        <div class="frames">
+            <div class="larrow">&lArr;</div>
+            <div class="framenumber">
+                <h3>Frame 2</h3>
+            </div>
+            <div class="rarrow">&rArr;</div>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <span>−</span>
+        </div>
+    </header>
+    <div id="field-container" class="field-container"></div>
+</body>
+
+</html>

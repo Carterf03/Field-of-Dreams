@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Of Dreams</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/signUp.css">
+    <script src="./js/coachSignUp.js" type="module"></script>
+    <script src="./js/common.js" type="module"></script>
+
+    <!-- BEGIN FAVICON -->
+    <link rel="icon" href="/images/logo-favicon-50x50.png"/>
+    <meta name="theme-color" content="#252831"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/logo-192x192.png"/>
+    <link rel="apple-touch-icon" sizes="256x256" href="/images/logo-256x256.png"/>
+    <link rel="apple-touch-icon" sizes="384x384" href="/images/logo-384x384.png"/>
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/logo-512x512.png"/>
+    <!-- END FAVICON -->
+
+    <!-- BEGIN INSTALLABLE APP-->
+    <link rel="manifest" href="/manifest.webmanifest"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="Field Of Dreams"/>
+    <!-- END INSTALLABLE APP-->
+</head>
+<body>
+    <div id="header">
+        <h1>Coach Sign Up</h1>
+        <div id="login">
+            <p>Already Have An Account? <a href="./">Log in!</a></p>
+        </div>
+    </div>
+    <main>
+    <form action="/coachRegister" method="post" enctype="multipart/form-data" id="signupForm">
+        <div class="infoset">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required minlength="3" placeholder="John Smith">
+        </div>
+        <div class="infoset">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required placeholder="jsmith@ncsu.edu">
+        </div>
+        <div class="infoset">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required minlength="8">
+        </div>
+        <div class="infoset">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <input type="submit" value="Sign Up">
+    </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add A Coach</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/addcoach.css">
+    <script src="./js/auth.js" type="module"></script>
+    <script src="./js/addCoach.js" type="module"></script>
+    <script src="./js/common.js" type="module"></script>
+    <script src="./js/navbar.js" type="module"></script>
+
+    <!-- BEGIN FAVICON -->
+    <link rel="icon" href="/images/logo-favicon-50x50.png"/>
+    <meta name="theme-color" content="#252831"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/logo-192x192.png"/>
+    <link rel="apple-touch-icon" sizes="256x256" href="/images/logo-256x256.png"/>
+    <link rel="apple-touch-icon" sizes="384x384" href="/images/logo-384x384.png"/>
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/logo-512x512.png"/>
+    <!-- END FAVICON -->
+
+    <!-- BEGIN INSTALLABLE APP-->
+    <link rel="manifest" href="/manifest.webmanifest"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="Field Of Dreams"/>
+    <!-- END INSTALLABLE APP-->
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header>
+        <nav>
+            <img class="logo" src="/images/logo-512x512.png" alt="FOD">
+            <a href="./myplays">My Plays</a>
+            <a id="currentPage" href="./addcoach">Add a Coach</a>
+            <a class="pfp" href="./playersettings"><img class="pfp" src="" alt="User"></a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="welcome"></h1>
+        <h2>Got a new coach?</h2>
+        <form id="codeContainer">
+            <div>
+                <h4>Coach Code:</h4>
+                <input type="text" id="coachCode" placeholder="H95D2A..." pattern="[a-zA-Z0-9]{6}" required>
+            </div>
+            <!-- <button id="submit">Add Coach</button> -->
+            <input type="submit" id="submit" value="Add Coach">
+        </form>
+        <div id="errorbox"></div>
+
+        <section id="coaches">
+            <h3>Your Coaches</h3>
+            <hr>
+            <div id="coachesList">
+            </div>
+        </section>
+    </main>
+
+    <template id="coachTemplate">
+        <p id="coachname"></p>
+    </template>
+</body>
+</html>

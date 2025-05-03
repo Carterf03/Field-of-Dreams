@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Default title for now -->
+    <title>Field of Dreams</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <header>
+        <h1>Field Of Dreams</h1>
+    </header>
+    <main>
+        <form action="/login" method="post" enctype="multipart/form-data">
+            <div id="login">
+                <div id="username" class="infoset">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" required placeholder="jsmith@ncsu.edu" autocomplete="on">
+                </div>
+                <div id="passwordset" class="infoset">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div> 
+                <input type="submit" value="Log In">
+            </div>
+        </form>
+        <div id="signup">
+            <h3>Sign Up</h3>
+            <div id="buttons">
+                <!-- Need to set up API call to pass appropriate value and route to coachSignUp.html-->
+                <a href="/coachsignup"><button>Coach</button></a>
+                <!-- Need to set up API call to pass appropriate value and route to coachSignUp.html-->
+                <a href="/playersignup"><button>Player</button></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

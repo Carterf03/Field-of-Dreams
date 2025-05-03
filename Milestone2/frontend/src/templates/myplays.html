@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Plays</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/plays.css">
+    <script src="js/playsSubtitle.js" defer></script>
+    <script src="./js/auth.js" type="module"></script>
+    <script src="./js/myPlays.js" type="module"></script>
+    <script src="./js/common.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="images/logo.png" alt="FOD">
+        <nav>
+            <a href="./myplays" id="currentPage">My Plays</a>
+            <a id="nav2" href=""><!--Populated Based on User Role--></a>
+            <a id="nav3" class="pfp" href=""><!--Populated Based on User Role--><img class="pfp" src="" alt="User"></a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="welcome"></h1>
+        <h2 id="subtitle">Tap any play to view</h2>
+        <section id="plays">
+            <!--Template places in here!-->
+        </section>
+    </main>
+    <footer>
+        <p>Created by Team R &copy; 2025</p>
+    </footer>
+    <template id="playTemplate">
+        <div class="play">
+            <a href="/viewplay"><img class="playpreview" src="images/fakepreview.png" alt="Preview"></a>
+            <p class="playname"></p>
+            <p class="coachname"></p>
+        </div>
+    </template>
+</body>
+
+</html>

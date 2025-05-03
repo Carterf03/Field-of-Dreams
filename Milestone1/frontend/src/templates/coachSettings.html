@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Settings</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/settings.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header>
+        <img class="logo" src="/images/logo.png" alt="FOD">
+        <nav>
+            <a href="/myplays">My Plays</a>
+            <a href="#">Create A Play</a>
+            <a id="currentPage" class="pfp" href="/coachsettings"><img class="pfp" src="/images/fakepfp.png" alt="User"></a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <!-- Profile Pic -->
+            <div id="imageContainer">
+                <img id="previewImage" src="/images/fakepfp.png" alt="Preview">
+                <label for="imageInput" id="imageInputLabel">Change Profile Picture</label>
+                <input type="file" id="imageInput" name="imageInput" accept="image/*">
+            </div>
+    
+            <div id="userprofile">
+                <!-- Full Name -->
+                <h1>Jane Doe</h1>
+                <!-- User Role -->
+                <h3 id="userrole">Coach</h3>
+                <!-- User Email -->
+                <h3 id="email">jdoe@ncsu.edu</h3>
+            </div>
+    
+            <!-- Coach Code -->
+            <div id="coachcode">
+                <h3 class="underline">Coach Code</h3>
+                <h3>ABC123</h3>
+            </div>
+        </section>
+    
+        <!-- Buttons to either Change Password or Delete Account -->
+        <div id="buttons">
+            <button>Change Password</button>
+            <button>Logout</button>
+            <button id="delete">Delete Account</button>
+        </div>
+    </main>
+</body>
+</html>

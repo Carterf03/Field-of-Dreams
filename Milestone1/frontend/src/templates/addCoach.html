@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add A Coach</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/addcoach.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header>
+        <img class="logo" src="/images/logo.png" alt="FOD">
+        <nav>
+            <a href="/myplays">My Plays</a>
+            <a id="currentPage" href="/addcoach">Add a Coach</a>
+            <a class="pfp" href="/playersettings"><img class="pfp" src="/images/fakepfp.png" alt="User"></a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome, Jane Doe</h1>
+        <h2>Got a new coach?</h2>
+        <div id="codeContainer">
+            <div>
+                <h4>Coach Code:</h4>
+                <input type="text" id="coachCode" placeholder="H95D2A..." pattern="[A-Z0-9]{6}">
+            </div>
+            <button type="submit" id="submit">Add Coach</button>
+        </div>
+
+        <section id="coaches">
+            <h3>Your Coaches</h3>
+            <hr>
+            <div id="coachesList">
+                <p>Coach 1</p>
+                <p>Coach 2</p>
+                <p>Coach 3</p>
+                <p>Coach 4</p>
+                <p>Coach 5</p>
+                <p>Coach 6</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
