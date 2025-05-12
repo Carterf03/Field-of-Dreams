@@ -76,5 +76,33 @@ function makePlay(play, fullName) {
     const coachName = playInstance.querySelector('.coachname');
     coachName.textContent = fullName;
 
+    // Dropdown logic for this play element only
+    const toggleBtn = playInstance.querySelector('.dropdown-toggle');
+    const menu = playInstance.querySelector('.dropdown-menu');
+
+    toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', () => {
+        menu.classList.remove('show');
+    });
+
+    // Update Play Title Modal Functionality
+    const updateTitleButton = playInstance.querySelector('.rename-btn');
+    const playTitleModal = document.querySelector('#playTitleModal');
+    const cancelButton = document.querySelector('#cancel');
+
+    // Show the modal when Rename is clicked
+    updateTitleButton.addEventListener('click', () => {
+        playTitleModal.classList.remove('hidden');
+    });
+
+    // Cancel button closes modal
+    cancelButton.addEventListener('click', () => {
+        playTitleModal.classList.add('hidden');
+    });
+
     return playElement;
 }
