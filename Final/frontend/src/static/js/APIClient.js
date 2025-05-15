@@ -159,8 +159,9 @@ const getFrameObjects = (frameId) => {
   return HTTPClient.get(`${BASE_API_PATH}/frames/${frameId}/objects`);
 };
 
-const createNewFrame = (ball_x, ball_y) => {
+const createNewFrame = (play_id, ball_x, ball_y) => {
   const data = {
+    play_id: play_id,
     ball_x: ball_x,
     ball_y: ball_y
   };

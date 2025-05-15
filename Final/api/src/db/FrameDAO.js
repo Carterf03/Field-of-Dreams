@@ -20,12 +20,21 @@ module.exports = {
         });
     },
 
-    createNewFrame: (frame) => {
+    createNewFrame: (playId, frame) => {
         return db.query('INSERT INTO frame (ball_x, ball_y) VALUES (?, ?)', [frame.ball_x, frame.ball_y]).then(rows => {
             if (rows.affectedRows === 0) { //If no rows inserted, no such play
                 throw new Error("No such play");
             }
-            return module.exports.getFrameByFrameId(rows.insertId);; // insertion successful
+            return module.exports.connectFrameToPlay(playId, rows.insertId); // insertion successful
+        });
+    },
+
+    connectFrameToPlay: (playId, frameId) => {
+        return db.query('INSERT INTO play_frame (pfs_play_id, pfs_frame_id) VALUES (?, ?)', [playId, frameId]).then(rows => {
+            if (rows.affectedRows === 0) { //If no rows inserted, no such play
+                throw new Error("No such play or frame");
+            }
+            return module.exports.getFrameByFrameId(frameId); // insertion successful
         });
     },
     

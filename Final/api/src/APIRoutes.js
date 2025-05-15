@@ -312,8 +312,8 @@ apiRouter.post('/plays', TokenMiddleware, (req, res) => {
         playTitle: req.body.playTitle,
         playPreview: req.body.playPreview
     };
-    PlayDAO.createNewPlay(req.user.id, play).then(() => {
-        res.json({success: true});
+    PlayDAO.createNewPlay(req.user.id, play).then(play => {
+        res.json(play);
     }).catch(err => {
         res.status(err.code || 500).json({error: err.message});
     });
@@ -371,7 +371,8 @@ apiRouter.post('/frames', TokenMiddleware, (req, res) => {
         ball_x: req.body.ball_x,
         ball_y: req.body.ball_y,
     };
-    FrameDAO.createNewFrame(newFrame).then(frame => {
+    FrameDAO.createNewFrame(req.body.play_id, newFrame).then(frame => {
+        console.log(frame);
         res.json(frame);
     }).catch(err => {
         res.status(err.code || 500).json({error: err.message});

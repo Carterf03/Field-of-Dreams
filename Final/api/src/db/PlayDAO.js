@@ -48,7 +48,7 @@ module.exports = {
             if (rows.affectedRows === 0) { //If no rows inserted, no such play
                 throw new Error("No such coach or play");
             }
-            return true; // insertion successful
+            return module.exports.getPlayByPlayId(playId); // insertion successful
         });
     },
 

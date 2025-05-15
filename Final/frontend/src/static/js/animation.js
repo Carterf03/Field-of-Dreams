@@ -163,6 +163,7 @@ export class Field {
   async setupFormation() {
     this.players = [];
     await this.fetchFrames();
+    console.log(this.frames);
     const firstFrame = this.frames[0];
     try {
       if(this.playId == "default"){
@@ -1513,7 +1514,7 @@ export class EditableField extends Field {
             }
           } else {
             // Frame doesn't exist, create it
-            await api.createNewFrame(frame.id, frame.ball.x, frame.ball.y);
+            await api.createNewFrame(this.playId, frame.ball.x, frame.ball.y);
             
             // Create players
             for (const player of frame.players) {
@@ -1526,15 +1527,15 @@ export class EditableField extends Field {
         const title = document.getElementById("playTitle");
         // Play doesn't exist, create it with the preview image path
         //Generate a random ID
-        await api.createNewPlay(title.textContent, imagePath);
+        const play = await api.createNewPlay(title.textContent, imagePath);
         
         // Create frames and players
         for (const frame of this.frames) {
-          const frameObj = await api.createNewFrame(frame.ball.x, frame.ball.y);
-          console.log(frameObj);
+          const newFrame = await api.createNewFrame(play.id, frame.ball.x, frame.ball.y);
+          console.log(newFrame);
           
           for (const player of frame.players) {
-            await api.createNewObject(player.id, player.x, player.y, teamColorsMapping[player.color], frameObj.id);
+            await api.createNewObject(player.id, player.x, player.y, teamColorsMapping[player.color], newFrame.id);
           }
         }
       }
