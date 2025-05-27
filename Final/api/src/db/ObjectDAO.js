@@ -48,7 +48,7 @@ module.exports = {
             if (rows.affectedRows !== 0) {
                 return db.query('DELETE FROM object WHERE object_id=?', [id]).then(rows => {
                     if (rows.affectedRows === 0) { //If no rows deleted, no such play
-                        throw new Error("No such play");
+                        throw new Error("No such object");
                     }
                     return true; // deletion successful
                 });

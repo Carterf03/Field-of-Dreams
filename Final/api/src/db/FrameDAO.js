@@ -48,11 +48,15 @@ module.exports = {
     },
     
     deleteFrame: (id) => {
-        return db.query('DELETE FROM frame WHERE frame_id=?', [id]).then(rows => {
-            if (rows.affectedRows === 0) { //If no rows deleted, no such play
-                throw new Error("No such play");
+        return db.query('DELETE FROM play_frame WHERE pfs_frame_id=?', [id]).then(rows => {
+            if (rows.affectedRows !== 0) {
+                return db.query('DELETE FROM frame WHERE frame_id=?', [id]).then(rows => {
+                    if (rows.affectedRows === 0) { //If no rows deleted, no such play
+                        throw new Error("No such frame");
+                    }
+                    return true; // deletion successful
+                });
             }
-            return true; // deletion successful
         });
     },
 
