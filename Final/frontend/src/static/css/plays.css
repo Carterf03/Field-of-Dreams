@@ -190,3 +190,7 @@ button#cancel {
 button#cancel:hover {
     background-color: rgb(226, 226, 226);
 }
+
+div.infoset {
+    margin: 15px 0;
+}

@@ -64,6 +64,77 @@ function makePlay(play, fullName) {
     // Set the link based on whether the user is a coach or player
     if (isCoach) {
         playLink.href = `/createplay?playId=${play.id}`;
+
+        // Dropdown logic for this play element only
+        const toggleBtn = playInstance.querySelector('.dropdown-toggle');
+        const menu = playInstance.querySelector('.dropdown-menu');
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('show');
+        });
+
+        document.addEventListener('click', () => {
+            menu.classList.remove('show');
+        });
+
+        /** Update Play Title Modal Functionality **/
+        const renameModelButton = playInstance.querySelector('.rename-btn');
+        const renamePlayModal = document.querySelector('#renamePlayModal');
+        const cancelButtons = document.querySelectorAll('#cancel');
+
+        // Show the modal when Rename is clicked
+        renameModelButton.addEventListener('click', (e) => {
+            const playElement = e.target.closest('.play');
+            const playId = playElement.dataset.playId;
+            console.log('Rename clicked for play ID:', playId);
+
+            // Show modal and store the playId for submission
+            renamePlayModal.classList.remove('hidden');
+            renamePlayModal.dataset.playId = playId;
+        });
+
+        /** Rename Play Functionality **/
+        const renameForm = document.querySelector('#renameForm');
+        const newTitle = document.querySelector('#newTitle');
+        renameForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            api.updatePlay(renamePlayModal.dataset.playId, newTitle.value, "images/fakepreview.png").then(() => {
+                renamePlayModal.classList.add('hidden');
+            });
+        });
+
+
+        /** Delete Play Modal Functionality **/
+        const deletePlayModal = document.querySelector('#deletePlayModal');
+        const deleteModalButton = playInstance.querySelector('.delete-btn');
+
+        deleteModalButton.addEventListener('click', (e) => {
+            const playElement = e.target.closest('.play');
+            const playId = playElement.dataset.playId;
+
+            // Show modal and store the playId for submission
+            deletePlayModal.classList.remove('hidden');
+            deletePlayModal.dataset.playId = playId;
+        });
+
+        /** Delete Play Functionality **/
+        const deleteForm = document.querySelector('#deleteForm');
+        deleteForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            api.deletePlay(deletePlayModal.dataset.playId).then(() => {
+                deletePlayModal.classList.add('hidden');
+            });
+        });
+
+
+        cancelButtons.forEach(e => {
+            e.addEventListener('click', () => {
+                renamePlayModal.classList.add('hidden');
+                deletePlayModal.classList.add('hidden');
+            });
+        });
+
     } else {
         playLink.href = `/viewplay?playId=${play.id}`;
     }
@@ -76,67 +147,6 @@ function makePlay(play, fullName) {
 
     const coachName = playInstance.querySelector('.coachname');
     coachName.textContent = fullName;
-
-    // Dropdown logic for this play element only
-    const toggleBtn = playInstance.querySelector('.dropdown-toggle');
-    const menu = playInstance.querySelector('.dropdown-menu');
-
-    toggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        menu.classList.toggle('show');
-    });
-
-    document.addEventListener('click', () => {
-        menu.classList.remove('show');
-    });
-
-    /** Update Play Title Modal Functionality **/
-    const renameModelButton = playInstance.querySelector('.rename-btn');
-    const playTitleModal = document.querySelector('#playTitleModal');
-    const cancelButtons = document.querySelectorAll('#cancel');
-
-    // Show the modal when Rename is clicked
-    renameModelButton.addEventListener('click', (e) => {
-        const playElement = e.target.closest('.play');
-        const playId = playElement.dataset.playId;
-        console.log('Rename clicked for play ID:', playId);
-
-        // Show modal and store the playId for submission
-        playTitleModal.classList.remove('hidden');
-        playTitleModal.dataset.playId = playId;
-    });
-
-
-    /** Delete Play Modal Functionality **/
-    const deletePlayModal = document.querySelector('#deletePlayModal');
-    const deleteModalButton = playInstance.querySelector('.delete-btn');
-
-    deleteModalButton.addEventListener('click', (e) => {
-        const playElement = e.target.closest('.play');
-        const playId = playElement.dataset.playId;
-        // console.log('Delete clicked for play ID:', playId);
-
-        // Show modal and store the playId for submission
-        deletePlayModal.classList.remove('hidden');
-        deletePlayModal.dataset.playId = playId;
-    });
-
-    /** Delete Play Functionality **/
-    const deleteForm = document.querySelector('#deleteForm');
-    deleteForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        api.deletePlay(deletePlayModal.dataset.playId).then(() => {
-            deletePlayModal.classList.add('hidden');
-        });
-    });
-
-
-    cancelButtons.forEach(e => {
-        e.addEventListener('click', () => {
-            playTitleModal.classList.add('hidden');
-            deletePlayModal.classList.add('hidden');
-        });
-    });
 
     return playElement;
 }
