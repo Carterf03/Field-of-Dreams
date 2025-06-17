@@ -1,4 +1,4 @@
-# Final Team Project
+# Post Final Team Project
 
 ## Field of Dreams
 
@@ -6,18 +6,9 @@
 
 ### Completed Features
 
-- Delete Account Functionality
-- Change Password Functionality
-- View Animation
-- Create Animation
-  - Adding/Deleting Players to Animation
-  - Adding/Deleting Frames
-  - Drag + Drop Functionality
-- Login/Logout Functionality
-- Player/Coach Registeration Functionality
-- Player/Coach information displayed in settings
-- Player's Coaches displayed on the addcoach page
-- Displaying User Plays on the /myplays page
+- New Play Creation Fixed
+- Renaming Plays
+- Deleting Plays
 
 ### Known Issues & Limitations
 
@@ -74,12 +65,6 @@ Use this syntax to embed an image in your markdown file:
 
 ## Team Member Contributions
 
-#### Bree Cobb
-
-- Viewing Animation Functionality
-- Creating Animation Functionality
-- Account Verification in Animations
-
 #### Carter Fultz
 
 - Delete Account Functionality
@@ -87,18 +72,3 @@ Use this syntax to embed an image in your markdown file:
 - Login/Signup Page and Navigation UI Updated
 - Service Worker/Offline Functionality
 - Installable App Functionality
-
-#### Isaac Palmer
-
-- Delete Account Functionality
-- Play API Routes
-- Frame API Routes
-- Object API Routes
-
-#### Milestone Effort Contribution
-
-<!-- Must add to 100% -->
-
-| Team Member 1 | Team Member 2 | Team Member 3 |
-| ------------- | ------------- | ------------- |
-| 33%            | 33%            | 33%            |
