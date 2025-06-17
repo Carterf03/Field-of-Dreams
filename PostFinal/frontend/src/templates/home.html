@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Default title for now -->
+    <title>Field of Dreams</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="./js/login.js" type="module"></script>
+    <script src="./js/common.js" type="module"></script>
+
+    <!-- BEGIN FAVICON -->
+    <link rel="icon" href="/images/logo-favicon-50x50.png"/>
+    <meta name="theme-color" content="#252831"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/logo-192x192.png"/>
+    <link rel="apple-touch-icon" sizes="256x256" href="/images/logo-256x256.png"/>
+    <link rel="apple-touch-icon" sizes="384x384" href="/images/logo-384x384.png"/>
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/logo-512x512.png"/>
+    <!-- END FAVICON -->
+
+    <!-- BEGIN INSTALLABLE APP-->
+    <link rel="manifest" href="/manifest.webmanifest"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="Field Of Dreams"/>
+    <!-- END INSTALLABLE APP-->
+</head>
+<body>
+    <header>
+        <h1>Field Of Dreams</h1>
+    </header>
+    <main>
+        <section id="login">
+            <form id="loginForm">
+                <div id="username" class="infoset">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" required placeholder="jsmith@ncsu.edu" autocomplete="on">
+                </div>
+                <div id="passwordset" class="infoset">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div id="errorbox"></div>
+                <input type="submit" value="Log In">
+            </form>
+        </section>
+        <div id="border"></div>
+        <section id="signup">
+            <h3>Sign Up</h3>
+            <div id="buttons">
+                <!-- Need to set up API call to pass appropriate value and route to coachSignUp.html-->
+                <a href="/coachsignup"><button>Coach</button></a>
+                <!-- Need to set up API call to pass appropriate value and route to coachSignUp.html-->
+                <a href="/playersignup"><button>Player</button></a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

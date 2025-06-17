@@ -1,0 +1,130 @@
+/* Mobile View CSS */
+header {
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+main {
+    margin-top: 100px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 2px 1fr;
+    gap: 50px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    label {
+        justify-content: first baseline;
+        margin: 5px;
+        text-align: left;
+        font-size: large;
+    }
+
+    div.infoset {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        justify-content: space-between;
+    }
+
+
+    input {
+        justify-content: last baseline;
+        margin: 5px;
+        height: 40px;
+        width: 300px;
+        font-size: large;
+    }
+
+    input[type="submit"] {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 50px;
+        font-size: larger;
+    }
+}
+
+#border {
+    background-color: black;
+}
+
+#signup {
+    font-size: x-large;
+
+    h3 {
+        margin-top: 0;
+    }
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 10px;
+
+    button {
+        font-size: x-large;
+        width: 100%;
+        height: 130px;
+    }
+}
+
+/* Desktop View CSS */
+@media (min-width: 600px) {
+    body {
+        height: 100vh;
+        margin: 0 auto;
+    }
+
+    main {
+        margin-top: 80px;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 2px 1fr;
+        gap: 0;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        padding: 0 10px;
+    }
+    
+    #buttons {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 10px;
+    }
+}

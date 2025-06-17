@@ -1,0 +1,383 @@
+body {
+    background-color: #44AA44;
+    margin: 0;
+    padding: 0;   
+}
+
+header {
+    background-color: #DBDBDB;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 2%;
+    width: 96%;
+    height: 8%;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.6);
+    border-left: 0.0625rem solid #333;
+    border-right: 0.0625rem solid #333;
+    transition: transform 0.3s ease;
+    color: #000000;
+}
+
+.controls {  
+    width: 96%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Buttons */
+.imgbutton {
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+/* Title */
+.title h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding-right: 55px;
+}
+
+/* Frame controls */
+.frames {
+    position: absolute;
+    bottom: -1.7rem;
+    background-color: #DBDBDB;
+    width: 20%;
+    min-width: 16rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.0625rem solid #333;
+}
+
+.larrow, .rarrow {
+    padding: 0 3% 0 3%;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.larrow {
+    border-right: 0.0625rem solid #333;
+}
+
+.rarrow {
+    border-left: 0.0625rem solid #333;
+}
+
+.larrow:hover, .rarrow:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.framenumber h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.menu-toggle {
+    position: absolute;
+    left: 0;
+    bottom: -1.625rem;
+    background-color: #DBDBDB;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 0.3125rem;
+    border-bottom-right-radius: 0.3125rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    user-select: none;
+    border-left: 0.0625rem solid #333;
+    border-bottom: 0.0625rem solid #333;
+    border-right: 0.0625rem solid #333;
+}
+
+.menu-toggle span {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+header.menu-hidden {
+    transform: translateY(-101%);
+}
+
+
+.field-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+  
+.player {
+    r: 3%;
+    transition: transform 0.2s ease;
+}
+
+.ball {
+    r: 1.3%;
+    transition: transform 0.2s ease;
+}
+
+footer {
+    background-color: #DBDBDB;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+    width: 96%;
+    height: 10%;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.6);
+    border-left: 0.0625rem solid #333;
+    border-right: 0.0625rem solid #333;
+    transition: transform 0.3s ease;
+}
+
+footer.menu-hidden {
+    transform: translateY(100%);
+}
+
+.footer-menu-toggle {
+    position: absolute;
+    left: 0;
+    bottom: 97%;
+    background-color: #DBDBDB;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 0.3125rem;
+    border-top-right-radius: 0.3125rem;
+    cursor: pointer;
+    user-select: none;
+    border-left: 0.0625rem solid #333;
+    border-top: 0.0625rem solid #333;
+    border-right: 0.0625rem solid #333;
+    border-bottom: 0.0625rem solid #333;
+}
+
+.menu-toggle span {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.menu {  
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerimgbutton {
+    max-height: 4rem;
+    max-width: auto;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    min-width: 300px;
+    max-width: 90%;
+}
+
+.modal-content h2 {
+    margin: 0 0 15px 0;
+    text-align: center;
+    }
+
+.color-selection-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.team-color-row {
+    display: flex;
+    align-items: center;
+}
+
+.team-color-row label {
+    margin-right: 10px;
+    min-width: 80px;
+}
+
+.team-color-row select {
+    flex: 1;
+    padding: 5px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    visibility: hidden;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.modal-buttons button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+#save-colors-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#save-colors-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.title-edit-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.title-edit-container label {
+    font-weight: bold;
+}
+
+.title-edit-container input {
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.title h1 {
+    cursor: pointer;
+}
+
+.title h1:hover {
+    text-decoration: underline;
+}
+
+#save-title-button {
+    background-color: #4CAF50;
+    border: none;
+}
+
+#save-title-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    
+    /** Body height adjustment for footer menu **/
+    body {
+        min-height: 100vh;
+        position: relative;
+    }
+    
+    /** Header adjustments **/
+    .imgbutton {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .frames {
+        min-width: 12rem;
+        bottom: -1.3rem;
+    }
+
+    .framenumber h3 {
+        font-size: 0.875rem;
+    }
+    
+    .larrow, .rarrow {
+        font-size: 1rem;
+    }
+    
+    .menu-toggle {
+        width: 1.25rem;
+        height: 1.25rem;
+        bottom: -1.3rem;
+    }
+    
+    .menu-toggle span {
+        font-size: 0.875rem;
+    }
+
+    /** Field adjustment **/
+    .field-container {
+        height: 80%;
+    }
+    
+    /** Footer menu adjustments **/
+    footer {
+        position: absolute;
+        height: 13.25%;
+        bottom: 0;
+        left: 2%;
+        width: 96%;
+    }
+
+    footer.menu-hidden {
+        position: fixed;
+        transform: translateY(100%);
+    }
+    
+    .footer-menu-toggle {
+        bottom: 100%;
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 4px;
+        padding: 8px;
+    }
+    
+    .add-color, .change-color, .add-frame, .remove-frame {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footerimgbutton {
+        max-height: 2.5rem;
+    }
+}

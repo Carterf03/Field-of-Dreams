@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Settings</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/settings.css">
+    <script src="./js/auth.js" type="module"></script>
+    <script src="./js/coachSettings.js" type="module" defer></script>
+    <script src="./js/common.js" type="module"></script>
+    <script src="./js/navbar.js" type="module"></script>
+
+    <!-- BEGIN FAVICON -->
+    <link rel="icon" href="/images/logo-favicon-50x50.png"/>
+    <meta name="theme-color" content="#252831"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/logo-192x192.png"/>
+    <link rel="apple-touch-icon" sizes="256x256" href="/images/logo-256x256.png"/>
+    <link rel="apple-touch-icon" sizes="384x384" href="/images/logo-384x384.png"/>
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/logo-512x512.png"/>
+    <!-- END FAVICON -->
+
+    <!-- BEGIN INSTALLABLE APP-->
+    <link rel="manifest" href="/manifest.webmanifest"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="Field Of Dreams"/>
+    <!-- END INSTALLABLE APP-->
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header>
+        <nav>
+            <img class="logo" src="/images/logo-512x512.png" alt="FOD">
+            <a href="./myplays">My Plays</a>
+            <a href="#">Create A Play</a>
+            <a id="currentPage" class="pfp" href="./coachsettings"><img class="pfp" src="" alt="User"></a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <!-- Profile Pic -->
+            <div id="imageContainer">
+                <img id="previewImage" src="" alt="Preview">
+                <label for="imageInput" id="imageInputLabel">Change Profile Picture</label>
+                <input type="file" id="imageInput" name="imageInput" accept="image/*">
+            </div>
+    
+            <div id="userprofile">
+                <!-- Full Name -->
+                <h1 id="name"></h1>
+                <!-- User Role -->
+                <h3 id="userrole"></h3>
+                <!-- User Email -->
+                <h3 id="email"></h3>
+            </div>
+    
+            <!-- Coach Code -->
+            <div id="coachcodeContainer">
+                <h3 class="underline">Coach Code</h3>
+                <h3 id="coachcode"></h3>
+            </div>
+        </section>
+    
+        <!-- Buttons to either Change Password or Delete Account -->
+        <div id="buttons">
+            <button id="changepassword">Change Password</button>
+            <button id="logout">Logout</button>
+            <button id="delete">Delete Account</button>
+        </div>
+
+        <!-- Change Password Modal -->
+        <div id="passwordModal" class="modal hidden">
+            <div class="modal-content">
+                <div>
+                    <h2>Change Password</h2>
+                    <button id="cancel">X</button>
+                </div>
+                <form id="passwordForm">
+                    <div class="infoset">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required minlength="8">
+                    </div>
+                    <div class="infoset">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <input type="submit" id="change" value="Change Password">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
